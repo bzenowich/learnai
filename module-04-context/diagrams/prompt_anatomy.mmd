@@ -1,0 +1,14 @@
+graph TD
+    subgraph Final Prompt
+    S[System Instructions]
+    H[Conversation History]
+    C[Retrieved Context]
+    U[User Question]
+    end
+    S --- H
+    H --- C
+    C --- U
+    style S fill:#fdd
+    style H fill:#eee
+    style C fill:#dfd
+    style U fill:#bbf

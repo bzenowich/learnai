@@ -1,0 +1,10 @@
+graph LR
+    Q[Query 'What am I looking for?'] --- K[Key 'What do I contain?']
+    K --> S[Similarity Score]
+    S --> W[Attention Weights]
+    W --> V[Value 'What do I give?']
+    V --> Out[Context-Aware Vector]
+    style Q fill:#f9f
+    style K fill:#bbf
+    style V fill:#dfd
+    style Out fill:#f96

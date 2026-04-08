@@ -1,0 +1,12 @@
+graph TD
+    In[Input Vector] --> Attn[Attention Mechanism]
+    Attn --> Res1[Add Residual & Norm]
+    In -.-> Res1
+    Res1 --> FFN[Feed Forward Network]
+    FFN --> Res2[Add Residual & Norm]
+    Res1 -.-> Res2
+    Res2 --> Out[Next Layer Output]
+    style Attn fill:#f9f
+    style FFN fill:#bbf
+    style Res1 fill:#eee
+    style Res2 fill:#eee

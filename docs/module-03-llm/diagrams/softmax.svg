@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" width="760" height="360" role="img" aria-label="Softmax turns raw scores into probabilities in two steps. First, exponentiate every score, which makes them all positive and exaggerates the gaps. Then divide each by their total so the results are positive and sum to 1.">
+  <style>text{font-family:ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}.mono{font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace}</style>
+  <defs>
+    <filter id="card" x="-3%" y="-3%" width="106%" height="112%"><feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.08"/></filter>
+    <marker id="ah" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#94a3b8"/></marker>
+  </defs>
+  <rect x="8" y="8" width="744" height="344" rx="16" fill="#ffffff" stroke="#e5e7eb" filter="url(#card)"/>
+  <text x="380" y="42" text-anchor="middle" font-size="15" fill="#64748b"><tspan font-weight="700" fill="#1e293b">Softmax</tspan> turns raw scores into probabilities that sum to 1</text>
+
+  <!-- column 1: logits -->
+  <text x="118" y="84" text-anchor="middle" font-size="13" font-weight="700" fill="#64748b">SCORES (logits)</text>
+  <g class="mono" font-size="13" font-weight="700" text-anchor="middle">
+    <rect x="58" y="100" width="120" height="34" rx="8" fill="#f1f5f9" stroke="#cbd5e1"/><text x="118" y="122" fill="#334155">2.0</text>
+    <rect x="58" y="142" width="120" height="34" rx="8" fill="#f1f5f9" stroke="#cbd5e1"/><text x="118" y="164" fill="#334155">1.0</text>
+    <rect x="58" y="184" width="120" height="34" rx="8" fill="#f1f5f9" stroke="#cbd5e1"/><text x="118" y="206" fill="#9f1239">-0.5</text>
+    <rect x="58" y="226" width="120" height="34" rx="8" fill="#f1f5f9" stroke="#cbd5e1"/><text x="118" y="248" fill="#334155">0.2</text>
+  </g>
+  <text x="118" y="284" text-anchor="middle" font-size="11.5" fill="#94a3b8">can be negative</text>
+
+  <!-- arrow exp -->
+  <line x1="190" y1="180" x2="248" y2="180" stroke="#94a3b8" stroke-width="2" marker-end="url(#ah)"/>
+  <rect x="196" y="158" width="46" height="22" rx="11" fill="#eef2ff" stroke="#c7d2fe"/>
+  <text x="219" y="173" text-anchor="middle" font-size="11" class="mono" font-weight="700" fill="#3730a3">eˣ</text>
+
+  <!-- column 2: exp -->
+  <text x="318" y="84" text-anchor="middle" font-size="13" font-weight="700" fill="#64748b">EXPONENTIATE</text>
+  <g class="mono" font-size="13" font-weight="700" text-anchor="middle">
+    <rect x="258" y="100" width="120" height="34" rx="8" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.5"/><text x="318" y="122" fill="#3730a3">7.39</text>
+    <rect x="258" y="142" width="120" height="34" rx="8" fill="#eef2ff" stroke="#c7d2fe"/><text x="318" y="164" fill="#3730a3">2.72</text>
+    <rect x="258" y="184" width="120" height="34" rx="8" fill="#eef2ff" stroke="#c7d2fe"/><text x="318" y="206" fill="#3730a3">0.61</text>
+    <rect x="258" y="226" width="120" height="34" rx="8" fill="#eef2ff" stroke="#c7d2fe"/><text x="318" y="248" fill="#3730a3">1.22</text>
+  </g>
+  <text x="318" y="284" text-anchor="middle" font-size="11.5" fill="#94a3b8">all positive · sum = 11.94</text>
+
+  <!-- arrow div -->
+  <line x1="390" y1="180" x2="448" y2="180" stroke="#94a3b8" stroke-width="2" marker-end="url(#ah)"/>
+  <rect x="392" y="158" width="54" height="22" rx="11" fill="#ecfdf5" stroke="#bbf7d0"/>
+  <text x="419" y="173" text-anchor="middle" font-size="11" class="mono" font-weight="700" fill="#065f46">÷ sum</text>
+
+  <!-- column 3: probs as bars -->
+  <text x="588" y="84" text-anchor="middle" font-size="13" font-weight="700" fill="#64748b">PROBABILITIES</text>
+  <g font-size="12" font-weight="700" class="mono">
+    <rect x="458" y="103" width="186" height="28" rx="6" fill="#ecfdf5"/><rect x="458" y="103" width="172" height="28" rx="6" fill="#059669"/><text x="638" y="123" text-anchor="end" fill="#065f46">0.62</text>
+    <rect x="458" y="145" width="186" height="28" rx="6" fill="#ecfdf5"/><rect x="458" y="145" width="64" height="28" rx="6" fill="#34d399"/><text x="638" y="165" text-anchor="end" fill="#065f46">0.23</text>
+    <rect x="458" y="187" width="186" height="28" rx="6" fill="#ecfdf5"/><rect x="458" y="187" width="14" height="28" rx="6" fill="#34d399"/><text x="638" y="207" text-anchor="end" fill="#065f46">0.05</text>
+    <rect x="458" y="229" width="186" height="28" rx="6" fill="#ecfdf5"/><rect x="458" y="229" width="28" height="28" rx="6" fill="#34d399"/><text x="638" y="249" text-anchor="end" fill="#065f46">0.10</text>
+  </g>
+  <text x="588" y="284" text-anchor="middle" font-size="11.5" fill="#94a3b8">sum = 1.00 ✓</text>
+
+  <text x="380" y="324" text-anchor="middle" font-size="13" fill="#64748b">The exponential step is what makes a <tspan font-weight="700" fill="#1e293b">small score lead win big</tspan> in the final odds.</text>
+</svg>

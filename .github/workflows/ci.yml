@@ -41,18 +41,3 @@ jobs:
         run: pip install -r requirements-docs.txt
       - name: Build with MkDocs (fails on broken nav/links)
         run: mkdocs build --strict
-
-  diagrams:
-    name: Render diagrams
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-      - name: Re-render Mermaid diagrams and check they are committed
-        run: |
-          npm install
-          npm run diagrams
-          git diff --exit-code '*.svg' \
-            || (echo "::error::Diagrams are out of date. Run 'make diagrams' and commit." && exit 1)

@@ -7,7 +7,7 @@ how to make changes, and how the build pipeline works.
 
 ```
 docs/                     # The course — one Markdown file per lesson
-  module-01-math/ ...     #   lessons, with a diagrams/ subfolder each
+  module-01-math/ ...     #   lessons, with a diagrams/ subfolder each (.svg)
   glossary.md             #   key terms, linked from the lessons
   index.md                #   site home page
 notebooks/                # Auto-generated Colab notebooks (do NOT edit by hand)
@@ -15,7 +15,6 @@ tools/                    # Build + validation scripts
   build_notebooks.py      #   regenerates notebooks/ from docs/
   check_snippets.py       #   runs every Python snippet
   check_links.py          #   validates internal links and #anchors
-  render_diagrams.mjs     #   renders Mermaid .mmd -> .svg
 mkdocs.yml                # Site configuration (MkDocs Material)
 ```
 
@@ -47,20 +46,26 @@ make notebooks      # rebuilds notebooks/ from the lessons
 
 ## Editing diagrams
 
-Diagrams are written in [Mermaid](https://mermaid.js.org/) and committed as
-**both** the `.mmd` source and the rendered `.svg` (so the site needs no build
-step). Each lesson folder has a `diagrams/` subfolder.
+Diagrams are **hand-authored SVG files** committed directly under each lesson's
+`diagrams/` subfolder, and referenced from the Markdown with a normal image tag,
+e.g. `![Vector Diagram](diagrams/vector.svg)`. There is no build or render step —
+edit the `.svg` and commit it.
 
-To change a diagram, edit the `.mmd` file, then re-render:
+A few conventions keep them consistent and readable on both the light and dark
+site themes:
 
-```bash
-make diagrams       # runs `npm install` then renders every .mmd -> .svg
-```
+- **Self-contained.** No external fonts, scripts, or CSS — an `<img>`-loaded SVG
+  can't see the page's styles. Use a system font stack and inline all styling.
+- **A light card.** Each diagram sits on a rounded white card (`fill="#ffffff"`,
+  a subtle border, and a soft drop shadow) so it reads cleanly on either theme.
+- **Shared palette.** Indigo (`#4f46e5`) as the primary accent to match the
+  Material theme, with slate text and emerald / amber / rose / sky accents.
+- **Pick a viewBox** sized to the content and set matching `width`/`height`; the
+  site scales images responsively.
+- **Add a descriptive `aria-label`** on the root `<svg>` for accessibility.
 
-Under the hood this runs [`@mermaid-js/mermaid-cli`](https://github.com/mermaid-js/mermaid-cli)
-(`mmdc`) with [`puppeteer-config.json`](puppeteer-config.json), which sets the
-sandbox flags needed in headless/CI environments. Commit both the `.mmd` and the
-regenerated `.svg`.
+To preview a single diagram while iterating, open the `.svg` directly in a
+browser, or run `make serve` and view the lesson page.
 
 ## Before you open a pull request
 
@@ -71,9 +76,9 @@ make test           # snippets run, links resolve, notebooks in sync
 make site           # builds the site in --strict mode (catches broken nav/links)
 ```
 
-CI ([`.github/workflows/ci.yml`](.github/workflows/ci.yml)) additionally
-re-renders the diagrams to confirm they're up to date. On every push to `main`,
-the site is rebuilt and published to GitHub Pages via
+CI ([`.github/workflows/ci.yml`](.github/workflows/ci.yml)) runs these same
+checks and builds the site in strict mode. On every push to `main`, the site is
+rebuilt and published to GitHub Pages via
 [`deploy-docs.yml`](.github/workflows/deploy-docs.yml).
 
 ## Licensing

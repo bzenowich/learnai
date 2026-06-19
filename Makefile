@@ -1,13 +1,12 @@
 # How AI Works — course build tasks.
 # Run `make help` to see the available targets.
 
-.PHONY: help install notebooks diagrams test check-snippets check-links check-notebooks serve site clean
+.PHONY: help install notebooks test check-snippets check-links check-notebooks serve site clean
 
 help:
 	@echo "Targets:"
 	@echo "  install         Install Python deps for the site and course code"
 	@echo "  notebooks       Regenerate the Colab notebooks from the lesson markdown"
-	@echo "  diagrams        Re-render all Mermaid (.mmd) diagrams to .svg (needs Node)"
 	@echo "  test            Run all checks (snippets, links, notebooks in sync)"
 	@echo "  serve           Live-preview the site at http://127.0.0.1:8000"
 	@echo "  site            Build the static site into ./site"
@@ -18,10 +17,6 @@ install:
 
 notebooks:
 	python3 tools/build_notebooks.py
-
-diagrams:
-	npm install
-	npm run diagrams
 
 check-snippets:
 	python3 tools/check_snippets.py

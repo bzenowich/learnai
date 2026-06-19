@@ -1,0 +1,84 @@
+site_name: "How AI Works"
+site_description: "A hands-on course on how AI works, from math to multi-agent systems."
+site_author: "Brian Zenowich"
+site_url: "https://bzenowich.github.io/learnai/"
+repo_url: "https://github.com/bzenowich/learnai"
+repo_name: "bzenowich/learnai"
+edit_uri: "edit/main/docs/"
+
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - content.code.copy
+    - search.highlight
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+
+nav:
+  - Home: index.md
+  - "1 · The Math Behind the Magic":
+      - "1.1 Vectors": module-01-math/1.1-vectors.md
+      - "1.2 Dot Products": module-01-math/1.2-dot-products.md
+      - "1.3 Matrices": module-01-math/1.3-matrices.md
+      - "1.4 Matrix-Vector Multiplication": module-01-math/1.4-matrix-vector-multiplication.md
+      - "1.5 From Math to Neurons": module-01-math/1.5-from-math-to-neurons.md
+  - "2 · How AI Understands Text":
+      - "2.1 Tokenization": module-02-text/2.1-tokenization.md
+      - "2.2 Embeddings": module-02-text/2.2-embeddings.md
+      - "2.3 Vector Space & Similarity": module-02-text/2.3-vector-space-similarity.md
+  - "3 · Inside the Large Language Model":
+      - "3.1 LLM Structure": module-03-llm/3.1-llm-structure.md
+      - "3.2 The Attention Mechanism": module-03-llm/3.2-attention-mechanism.md
+      - "3.3 Layer by Layer": module-03-llm/3.3-layer-by-layer.md
+      - "3.4 Next-Token Prediction": module-03-llm/3.4-next-token-prediction.md
+  - "4 · The Art and Science of Context":
+      - "4.1 Anatomy of a Prompt": module-04-context/4.1-anatomy-of-a-prompt.md
+      - "4.2 The Prompt Pipeline": module-04-context/4.2-prompt-pipeline.md
+  - "5 · Expanding the AI's Brain":
+      - "5.1 The Limits of Memory": module-05-rag-tools/5.1-limits-of-memory.md
+      - "5.2 Retrieval-Augmented Generation": module-05-rag-tools/5.2-rag.md
+      - "5.3 Dynamic Context": module-05-rag-tools/5.3-dynamic-context.md
+      - "5.4 Connecting to the World with MCP": module-05-rag-tools/5.4-mcp.md
+  - "6 · The Evolution of AI Architectures":
+      - "6.1 Simple Generative Chat": module-06-evolution/6.1-simple-chat.md
+      - "6.2 Context-Aware Models": module-06-evolution/6.2-context-aware.md
+      - "6.3 Reasoning & Feedback Loops": module-06-evolution/6.3-reasoning.md
+      - "6.4 Agentic AI": module-06-evolution/6.4-agentic-ai.md
+      - "6.5 Thinking & Multi-Agent Systems": module-06-evolution/6.5-thinking-multi-agent.md
+  - "7 · Capstone":
+      - "7.1 Build a Mini RAG Chatbot": module-07-capstone/7.1-mini-rag-chatbot.md
+  - Glossary: glossary.md

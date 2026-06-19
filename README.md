@@ -80,7 +80,7 @@ make test        # run snippets, check links, verify notebooks are in sync
 ```
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for the full workflow, including how the
-diagram pipeline (Mermaid `.mmd` → `.svg`) works.
+hand-authored SVG diagrams are organized.
 
 ## License
 

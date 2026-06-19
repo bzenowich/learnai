@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" width="760" height="360" role="img" aria-label="Tool calling loop: the LLM reads a request, decides it needs a tool, emits a structured call, the app runs the real function and returns the result, and the LLM uses that result to write the final answer.">
+  <style>text{font-family:ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}.mono{font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace}</style>
+  <defs>
+    <filter id="card" x="-3%" y="-3%" width="106%" height="112%"><feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.08"/></filter>
+    <marker id="ah" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#94a3b8"/></marker>
+  </defs>
+  <rect x="8" y="8" width="744" height="344" rx="16" fill="#ffffff" stroke="#e5e7eb" filter="url(#card)"/>
+  <text x="380" y="42" text-anchor="middle" font-size="15" fill="#64748b">Tools let the model <tspan font-weight="700" fill="#1e293b">run code and read fresh data</tspan> mid-answer</text>
+
+  <!-- user -->
+  <rect x="40" y="150" width="120" height="64" rx="12" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="100" y="178" text-anchor="middle" font-size="12.5" font-weight="700" fill="#334155">User</text>
+  <text x="100" y="197" text-anchor="middle" font-size="10" class="mono" fill="#475569">"Weather in Paris?"</text>
+  <line x1="160" y1="182" x2="222" y2="182" stroke="#94a3b8" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- LLM -->
+  <rect x="226" y="138" width="150" height="88" rx="12" fill="#1e293b"/>
+  <text x="301" y="172" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">LLM</text>
+  <text x="301" y="194" text-anchor="middle" font-size="10.5" fill="#94a3b8">"I can't know this —</text>
+  <text x="301" y="208" text-anchor="middle" font-size="10.5" fill="#94a3b8">I need a tool"</text>
+
+  <!-- LLM -> tool (call) -->
+  <path d="M376,160 C440,160 460,150 520,150" fill="none" stroke="#4f46e5" stroke-width="2" marker-end="url(#ah)"/>
+  <text x="448" y="142" text-anchor="middle" font-size="10.5" class="mono" font-weight="700" fill="#4f46e5">get_weather("Paris")</text>
+
+  <!-- tool -->
+  <rect x="524" y="138" width="160" height="88" rx="12" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+  <text x="604" y="168" text-anchor="middle" font-size="13.5" font-weight="700" fill="#065f46">Real function</text>
+  <text x="604" y="188" text-anchor="middle" font-size="10.5" fill="#047857">calls weather API,</text>
+  <text x="604" y="202" text-anchor="middle" font-size="10.5" fill="#047857">DB, calculator…</text>
+
+  <!-- tool -> LLM (result) -->
+  <path d="M520,212 C460,212 440,224 376,210" fill="none" stroke="#059669" stroke-width="2" marker-end="url(#ah)"/>
+  <text x="448" y="240" text-anchor="middle" font-size="10.5" class="mono" font-weight="700" fill="#059669">→ "18°C, sunny"</text>
+
+  <!-- LLM -> answer (down) -->
+  <path d="M301,226 C301,272 301,272 301,288" fill="none" stroke="#94a3b8" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- final answer -->
+  <rect x="206" y="290" width="350" height="40" rx="10" fill="#fff7ed" stroke="#d97706" stroke-width="1.5"/>
+  <text x="381" y="315" text-anchor="middle" font-size="12.5" font-weight="700" fill="#92400e">"It's 18°C and sunny in Paris right now."</text>
+
+  <text x="660" y="300" text-anchor="middle" font-size="11.5" fill="#94a3b8">loop can</text>
+  <text x="660" y="316" text-anchor="middle" font-size="11.5" fill="#94a3b8">repeat</text>
+</svg>

@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 380" width="820" height="380" role="img" aria-label="MCP architecture: one AI client speaks a single standard protocol to many MCP servers. Each server exposes a different capability — files, a database, web search, calendar — so the same plug connects the AI to any tool.">
+  <style>text{font-family:ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}.mono{font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace}</style>
+  <defs>
+    <filter id="card" x="-3%" y="-3%" width="106%" height="112%"><feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.08"/></filter>
+    <marker id="ah" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#94a3b8"/></marker>
+  </defs>
+  <rect x="8" y="8" width="804" height="364" rx="16" fill="#ffffff" stroke="#e5e7eb" filter="url(#card)"/>
+  <text x="410" y="42" text-anchor="middle" font-size="15" fill="#64748b">MCP is <tspan font-weight="700" fill="#1e293b">one standard plug</tspan> between an AI and any tool</text>
+
+  <!-- client -->
+  <rect x="40" y="150" width="150" height="96" rx="14" fill="#1e293b"/>
+  <text x="115" y="186" text-anchor="middle" font-size="14.5" font-weight="700" fill="#ffffff">AI Client</text>
+  <text x="115" y="208" text-anchor="middle" font-size="11" fill="#94a3b8">(the LLM app)</text>
+  <text x="115" y="226" text-anchor="middle" font-size="11" fill="#94a3b8">speaks MCP</text>
+
+  <!-- protocol bus -->
+  <rect x="252" y="60" width="84" height="280" rx="12" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="286" y="200" text-anchor="middle" font-size="13" font-weight="700" fill="#5b21b6" transform="rotate(-90 286 200)">MCP protocol</text>
+  <text x="306" y="200" text-anchor="middle" font-size="10" fill="#7c3aed" transform="rotate(-90 306 200)">one format for all</text>
+
+  <!-- client <-> bus -->
+  <line x1="190" y1="198" x2="248" y2="198" stroke="#7c3aed" stroke-width="2.5"/>
+
+  <!-- servers -->
+  <g>
+    <line x1="336" y1="100" x2="556" y2="100" stroke="#94a3b8" stroke-width="2" marker-end="url(#ah)"/>
+    <rect x="560" y="74" width="220" height="52" rx="12" fill="#ecfdf5" stroke="#059669" stroke-width="1.5"/>
+    <text x="582" y="98" font-size="13" font-weight="700" fill="#065f46">📁 Files server</text>
+    <text x="582" y="116" font-size="10.5" class="mono" fill="#047857">read / write documents</text>
+  </g>
+  <g>
+    <line x1="336" y1="166" x2="556" y2="166" stroke="#94a3b8" stroke-width="2" marker-end="url(#ah)"/>
+    <rect x="560" y="140" width="220" height="52" rx="12" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.5"/>
+    <text x="582" y="164" font-size="13" font-weight="700" fill="#3730a3">🗄 Database server</text>
+    <text x="582" y="182" font-size="10.5" class="mono" fill="#4338ca">query company records</text>
+  </g>
+  <g>
+    <line x1="336" y1="232" x2="556" y2="232" stroke="#94a3b8" stroke-width="2" marker-end="url(#ah)"/>
+    <rect x="560" y="206" width="220" height="52" rx="12" fill="#fff7ed" stroke="#d97706" stroke-width="1.5"/>
+    <text x="582" y="230" font-size="13" font-weight="700" fill="#92400e">🌐 Web search server</text>
+    <text x="582" y="248" font-size="10.5" class="mono" fill="#b45309">fetch live results</text>
+  </g>
+  <g>
+    <line x1="336" y1="298" x2="556" y2="298" stroke="#94a3b8" stroke-width="2" marker-end="url(#ah)"/>
+    <rect x="560" y="272" width="220" height="52" rx="12" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.5"/>
+    <text x="582" y="296" font-size="13" font-weight="700" fill="#5b21b6">📅 Calendar server</text>
+    <text x="582" y="314" font-size="10.5" class="mono" fill="#6d28d9">read / create events</text>
+  </g>
+
+  <text x="410" y="360" text-anchor="middle" font-size="13" fill="#64748b">Add a new tool? <tspan font-weight="700" fill="#1e293b">Just plug in another server</tspan> — no change to the AI client.</text>
+</svg>

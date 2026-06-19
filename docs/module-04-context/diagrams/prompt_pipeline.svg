@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 320" width="860" height="320" role="img" aria-label="The prompt pipeline assembles an LLM input in stages: take the user's question, retrieve relevant context, inject it into a template with the system instructions, send the assembled prompt to the LLM, and return the response.">
+  <style>text{font-family:ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}.mono{font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace}</style>
+  <defs>
+    <filter id="card" x="-3%" y="-3%" width="106%" height="112%"><feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.08"/></filter>
+    <marker id="ah" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#94a3b8"/></marker>
+  </defs>
+  <rect x="8" y="8" width="844" height="304" rx="16" fill="#ffffff" stroke="#e5e7eb" filter="url(#card)"/>
+  <text x="430" y="44" text-anchor="middle" font-size="15" fill="#64748b">A <tspan font-weight="700" fill="#1e293b">prompt pipeline</tspan> builds the model's input one stage at a time</text>
+
+  <!-- stage 1: user input -->
+  <rect x="28" y="110" width="130" height="90" rx="12" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.5"/>
+  <text x="93" y="138" text-anchor="middle" font-size="12.5" font-weight="700" fill="#3730a3">① User input</text>
+  <text x="93" y="162" text-anchor="middle" font-size="10.5" class="mono" fill="#4338ca">"Reset my</text>
+  <text x="93" y="176" text-anchor="middle" font-size="10.5" class="mono" fill="#4338ca">password?"</text>
+
+  <line x1="158" y1="155" x2="190" y2="155" stroke="#94a3b8" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- stage 2: retrieve -->
+  <rect x="194" y="110" width="130" height="90" rx="12" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="259" y="138" text-anchor="middle" font-size="12.5" font-weight="700" fill="#5b21b6">② Retrieve</text>
+  <text x="259" y="162" text-anchor="middle" font-size="10.5" fill="#6d28d9">find matching</text>
+  <text x="259" y="176" text-anchor="middle" font-size="10.5" fill="#6d28d9">docs / facts</text>
+
+  <line x1="324" y1="155" x2="356" y2="155" stroke="#94a3b8" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- stage 3: assemble -->
+  <rect x="360" y="98" width="150" height="114" rx="12" fill="#f8fafc" stroke="#059669" stroke-width="1.5"/>
+  <text x="435" y="122" text-anchor="middle" font-size="12.5" font-weight="700" fill="#065f46">③ Assemble</text>
+  <rect x="374" y="132" width="122" height="22" rx="5" fill="#f1f5f9" stroke="#cbd5e1"/><text x="382" y="147" font-size="9.5" class="mono" fill="#475569">[system rules]</text>
+  <rect x="374" y="158" width="122" height="22" rx="5" fill="#ecfdf5" stroke="#bbf7d0"/><text x="382" y="173" font-size="9.5" class="mono" fill="#047857">[context]</text>
+  <rect x="374" y="184" width="122" height="22" rx="5" fill="#eef2ff" stroke="#c7d2fe"/><text x="382" y="199" font-size="9.5" class="mono" fill="#4338ca">[user question]</text>
+
+  <line x1="510" y1="155" x2="542" y2="155" stroke="#94a3b8" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- stage 4: LLM -->
+  <rect x="546" y="116" width="120" height="78" rx="12" fill="#1e293b"/>
+  <text x="606" y="148" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">④ LLM</text>
+  <text x="606" y="170" text-anchor="middle" font-size="10.5" fill="#94a3b8">reads the prompt</text>
+
+  <line x1="666" y1="155" x2="698" y2="155" stroke="#94a3b8" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- stage 5: response -->
+  <rect x="702" y="110" width="130" height="90" rx="12" fill="#fff7ed" stroke="#d97706" stroke-width="1.5"/>
+  <text x="767" y="138" text-anchor="middle" font-size="12.5" font-weight="700" fill="#92400e">⑤ Response</text>
+  <text x="767" y="162" text-anchor="middle" font-size="10.5" fill="#b45309">grounded</text>
+  <text x="767" y="176" text-anchor="middle" font-size="10.5" fill="#b45309">answer</text>
+
+  <text x="430" y="262" text-anchor="middle" font-size="13" fill="#64748b">The model never sees these stages — it only sees <tspan font-weight="700" fill="#1e293b">the final assembled string</tspan>.</text>
+  <text x="430" y="288" text-anchor="middle" font-size="12.5" fill="#94a3b8">Each stage is reusable code, so every request gets the same well-formed prompt.</text>
+</svg>

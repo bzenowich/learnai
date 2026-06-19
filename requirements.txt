@@ -1,0 +1,2 @@
+# The only dependency the course code itself needs.
+numpy>=1.26

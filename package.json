@@ -1,0 +1,12 @@
+{
+  "name": "learnai-diagrams",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Diagram tooling for the How AI Works course (Mermaid -> SVG).",
+  "scripts": {
+    "diagrams": "node tools/render_diagrams.mjs"
+  },
+  "devDependencies": {
+    "@mermaid-js/mermaid-cli": "^11.4.0"
+  }
+}

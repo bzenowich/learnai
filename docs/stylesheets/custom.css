@@ -1,0 +1,220 @@
+/* LearnAI Custom Styling: Pyodide In-Browser Runner, Progress Tracker, and Tooltips */
+
+/* --- Pyodide In-Browser Code Runner --- */
+.pyodide-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0.25rem;
+  font-size: 0.8rem;
+}
+
+.pyodide-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.65rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 4px;
+  border: 1px solid var(--md-default-fg-color--lighter);
+  background-color: var(--md-default-bg-color);
+  color: var(--md-default-fg-color);
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+
+.pyodide-btn:hover {
+  background-color: var(--md-accent-fg-color);
+  color: #ffffff;
+  border-color: var(--md-accent-fg-color);
+}
+
+.pyodide-run-btn {
+  background-color: var(--md-primary-fg-color);
+  color: #ffffff;
+  border-color: var(--md-primary-fg-color);
+}
+
+.pyodide-run-btn:hover {
+  opacity: 0.9;
+  filter: brightness(1.1);
+}
+
+.pyodide-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.pyodide-status {
+  margin-left: auto;
+  font-size: 0.75rem;
+  color: var(--md-default-fg-color--light);
+  font-family: var(--md-code-font-family);
+}
+
+.pyodide-output-wrapper {
+  margin: 0.5rem 0 1rem 0;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: var(--md-code-bg-color);
+}
+
+.pyodide-output-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.3rem 0.75rem;
+  background-color: var(--md-default-fg-color--lightest);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--md-default-fg-color--light);
+}
+
+.pyodide-clear-btn {
+  background: none;
+  border: none;
+  font-size: 0.7rem;
+  cursor: pointer;
+  color: var(--md-default-fg-color--light);
+}
+
+.pyodide-clear-btn:hover {
+  color: var(--md-default-fg-color);
+  text-decoration: underline;
+}
+
+.pyodide-output {
+  margin: 0 !important;
+  padding: 0.75rem !important;
+  font-family: var(--md-code-font-family);
+  font-size: 0.8rem;
+  line-height: 1.4;
+  white-space: pre-wrap;
+  word-break: break-all;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.pyodide-running {
+  color: var(--md-default-fg-color--light);
+  font-style: italic;
+}
+
+.pyodide-error {
+  color: #ef4444;
+}
+
+.pyodide-editable {
+  outline: 2px dashed var(--md-primary-fg-color) !important;
+  outline-offset: 2px;
+}
+
+/* --- Progress Tracking & Lesson Completion --- */
+.learnai-nav-check {
+  color: #10b981;
+  font-weight: bold;
+  font-size: 0.9em;
+  margin-left: 0.35rem;
+}
+
+.learnai-progress-meter {
+  padding: 0.5rem 0.8rem;
+  margin: 0.5rem 0;
+  background: var(--md-default-bg-color--lightest, rgba(0,0,0,0.03));
+  border-radius: 6px;
+  font-size: 0.75rem;
+}
+
+.learnai-progress-label {
+  margin-bottom: 0.3rem;
+  color: var(--md-default-fg-color--light);
+  font-weight: 500;
+}
+
+.learnai-progress-bar {
+  width: 100%;
+  height: 6px;
+  background-color: var(--md-default-fg-color--lightest);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.learnai-progress-fill {
+  height: 100%;
+  background-color: #10b981;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.learnai-completion-box {
+  margin: 2.5rem 0 1.5rem 0;
+  padding: 1.25rem 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--md-default-fg-color--lighter);
+  background: var(--md-default-bg-color);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+
+.learnai-completion-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.learnai-completion-info h4 {
+  margin: 0 0 0.25rem 0 !important;
+  font-size: 1rem;
+}
+
+.learnai-completion-info p {
+  margin: 0 !important;
+  font-size: 0.85rem;
+  color: var(--md-default-fg-color--light);
+}
+
+.learnai-complete-btn {
+  padding: 0.5rem 1.25rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 6px;
+  border: 1px solid var(--md-primary-fg-color);
+  background-color: var(--md-primary-fg-color);
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.learnai-complete-btn:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
+
+.learnai-complete-btn.is-completed {
+  background-color: #10b981;
+  border-color: #10b981;
+}
+
+/* --- Abbreviations / Tooltips --- */
+abbr[title] {
+  text-decoration: underline dotted var(--md-primary-fg-color);
+  text-underline-offset: 3px;
+  cursor: help;
+}
+
+/* --- Material Grid Cards Customization --- */
+.grid.cards > ul > li {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.grid.cards > ul > li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}

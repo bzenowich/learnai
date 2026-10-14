@@ -14,11 +14,13 @@ Language Model.
 **📖 Read it as a website: <https://bzenowich.github.io/learnai/>**
 
 Every lesson pairs plain-English explanations with small, runnable `numpy`
-examples (verified output included) and exercises with worked solutions. Each
-lesson has an **"Open in Colab"** badge so you can run and tweak the code in your
-browser with zero setup.
+examples (verified output included) and exercises with worked solutions. Run the
+code directly in your browser with zero setup, or open in Google Colab.
 
 ## Table of Contents
+
+### Module 0: Readiness Check
+* [0.1 Readiness Check](docs/module-00-setup/0.1-readiness-check.md) — Python lists vs. NumPy arrays, shapes, indexing, and broadcasting
 
 ### Module 1: The Math Behind the Magic
 * [1.1 Vectors](docs/module-01-math/1.1-vectors.md) — the building blocks of AI data
@@ -37,6 +39,7 @@ browser with zero setup.
 * [3.2 The Attention Mechanism](docs/module-03-llm/3.2-attention-mechanism.md) — weighing importance
 * [3.3 Layer by Layer](docs/module-03-llm/3.3-layer-by-layer.md) — transforming the prompt vector
 * [3.4 Next-Token Prediction](docs/module-03-llm/3.4-next-token-prediction.md) — the fundamental loop
+* [3.5 How Models Learn](docs/module-03-llm/3.5-how-models-learn.md) — loss, gradients, pre-training, and RLHF
 
 ### Module 4: The Art and Science of Context
 * [4.1 Anatomy of a Prompt](docs/module-04-context/4.1-anatomy-of-a-prompt.md)
@@ -57,8 +60,10 @@ browser with zero setup.
 
 ### Module 7: Capstone
 * [7.1 Build a Mini RAG Chatbot](docs/module-07-capstone/7.1-mini-rag-chatbot.md) — assemble everything into one working project
+* [7.2 Build an Agentic Chatbot](docs/module-07-capstone/7.2-agentic-chatbot.md) — add an autonomous ReAct loop, tool calling, and execution
 
-📚 A [Glossary](docs/glossary.md) defines every key term and links back to where it's introduced.
+📚 A [Glossary](docs/glossary.md) defines every key term and links back to where it's introduced.  
+🎓 An [Educator Guide](docs/educators.md) provides lesson pacing, classroom standards alignment (CSTA / AP CSP), and lab setups.
 
 ## Running the code
 

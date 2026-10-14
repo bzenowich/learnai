@@ -6,8 +6,13 @@ repo_url: "https://github.com/bzenowich/learnai"
 repo_name: "bzenowich/learnai"
 edit_uri: "edit/main/docs/"
 
+not_in_nav: |
+  includes/*
+  review-oct.md
+
 theme:
   name: material
+  custom_dir: overrides
   features:
     - navigation.sections
     - navigation.top
@@ -16,15 +21,16 @@ theme:
     - search.highlight
     - toc.follow
   palette:
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
+    # Palette toggle for light mode
+    - scheme: default
       primary: indigo
       accent: indigo
       toggle:
         icon: material/weather-night
         name: Switch to dark mode
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
+
+    # Palette toggle for dark mode
+    - scheme: slate
       primary: indigo
       accent: indigo
       toggle:
@@ -35,21 +41,39 @@ markdown_extensions:
   - admonition
   - attr_list
   - md_in_html
+  - abbr
   - toc:
       permalink: true
   - pymdownx.details
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.highlight:
       anchor_linenums: true
+      pygments_lang_class: true
   - pymdownx.arithmatex:
       generic: true
+  - pymdownx.snippets:
+      base_path: ["docs"]
+      auto_append:
+        - includes/abbreviations.md
+
+extra_css:
+  - stylesheets/custom.css
 
 extra_javascript:
   - javascripts/mathjax.js
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+  - https://cdn.jsdelivr.net/pyodide/v0.26.4/full/pyodide.js
+  - javascripts/pyodide-runner.js
+  - javascripts/progress.js
 
 nav:
   - Home: index.md
+  - "0 · Readiness Check":
+      - "0.1 Readiness Check": module-00-setup/0.1-readiness-check.md
   - "1 · The Math Behind the Magic":
       - "1.1 Vectors": module-01-math/1.1-vectors.md
       - "1.2 Dot Products": module-01-math/1.2-dot-products.md
@@ -65,6 +89,7 @@ nav:
       - "3.2 The Attention Mechanism": module-03-llm/3.2-attention-mechanism.md
       - "3.3 Layer by Layer": module-03-llm/3.3-layer-by-layer.md
       - "3.4 Next-Token Prediction": module-03-llm/3.4-next-token-prediction.md
+      - "3.5 How Models Learn": module-03-llm/3.5-how-models-learn.md
   - "4 · The Art and Science of Context":
       - "4.1 Anatomy of a Prompt": module-04-context/4.1-anatomy-of-a-prompt.md
       - "4.2 The Prompt Pipeline": module-04-context/4.2-prompt-pipeline.md
@@ -81,4 +106,6 @@ nav:
       - "6.5 Thinking & Multi-Agent Systems": module-06-evolution/6.5-thinking-multi-agent.md
   - "7 · Capstone":
       - "7.1 Build a Mini RAG Chatbot": module-07-capstone/7.1-mini-rag-chatbot.md
+      - "7.2 Build an Agentic Chatbot": module-07-capstone/7.2-agentic-chatbot.md
+  - "For Educators": educators.md
   - Glossary: glossary.md

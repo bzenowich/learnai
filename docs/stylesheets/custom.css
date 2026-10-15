@@ -114,6 +114,93 @@
   outline-offset: 2px;
 }
 
+/* --- Exercise Workspace & Controls --- */
+.pyodide-exercise-workspace {
+  margin: 1rem 0 1.25rem 0;
+}
+
+.pyodide-exercise-toolbar {
+  margin-top: 0.5rem;
+  margin-bottom: 0.35rem;
+}
+
+.pyodide-solution-btn {
+  background-color: var(--md-default-bg-color);
+  border-color: #f59e0b;
+  color: #d97706;
+}
+
+[data-md-color-scheme="slate"] .pyodide-solution-btn {
+  color: #fbbf24;
+  border-color: #d97706;
+}
+
+.pyodide-solution-btn:hover {
+  background-color: #f59e0b;
+  color: #ffffff;
+  border-color: #f59e0b;
+}
+
+.pyodide-reset-btn:hover {
+  background-color: var(--md-default-fg-color--lightest);
+  color: var(--md-default-fg-color);
+}
+
+.pyodide-exercise-container {
+  margin: 0.25rem 0 0.5rem 0 !important;
+  border: 1.5px solid var(--md-default-fg-color--lighter);
+  border-radius: 6px;
+  background-color: var(--md-code-bg-color);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pyodide-exercise-container:focus-within {
+  border-color: var(--md-primary-fg-color);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+.pyodide-exercise-code {
+  display: block;
+  min-height: 85px;
+  padding: 0.75rem 1rem !important;
+  font-family: var(--md-code-font-family);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-word;
+  outline: none !important;
+  cursor: text;
+}
+
+.pyodide-solution-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.35rem 0.75rem;
+  margin-top: 0.75rem;
+  background-color: var(--md-default-fg-color--lightest);
+  border: 1px solid var(--md-default-fg-color--lighter);
+  border-bottom: none;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--md-default-fg-color--light);
+}
+
+.pyodide-solution-header + .highlight {
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+}
+
+.pyodide-load-btn {
+  font-size: 0.7rem;
+  padding: 0.15rem 0.5rem;
+}
+
+
 /* --- Progress Tracking & Lesson Completion --- */
 .learnai-nav-check {
   color: #10b981;

@@ -126,12 +126,6 @@ function setupExerciseWorkspace(container, codeEl, solutionDetails) {
   runBtn.title = "Run code in browser (Ctrl+Enter)";
   runBtn.innerHTML = '<span class="pyodide-btn-icon">▶</span> Run in Browser';
 
-  const solutionBtn = document.createElement("button");
-  solutionBtn.type = "button";
-  solutionBtn.className = "pyodide-btn pyodide-solution-btn";
-  solutionBtn.title = "Replace editor code with the suggested solution";
-  solutionBtn.innerHTML = '<span class="pyodide-btn-icon">💡</span> Overwrite with Solution';
-
   const resetBtn = document.createElement("button");
   resetBtn.type = "button";
   resetBtn.className = "pyodide-btn pyodide-reset-btn";
@@ -143,7 +137,6 @@ function setupExerciseWorkspace(container, codeEl, solutionDetails) {
   statusSpan.textContent = "Ready";
 
   toolbar.appendChild(runBtn);
-  toolbar.appendChild(solutionBtn);
   toolbar.appendChild(resetBtn);
   toolbar.appendChild(statusSpan);
 
@@ -207,7 +200,7 @@ function setupExerciseWorkspace(container, codeEl, solutionDetails) {
     executePythonScript(code, runBtn, statusSpan, outputContainer, outputPre);
   });
 
-  // Overwrite with Solution handler
+  // Overwrite with Solution handler (triggered from suggested solution box)
   function overwriteWithSolution() {
     const current = (exerciseCodeEl.innerText || exerciseCodeEl.textContent).trim();
     if (current && current !== defaultStarter.trim() && current !== solutionCode) {
@@ -218,10 +211,9 @@ function setupExerciseWorkspace(container, codeEl, solutionDetails) {
     exerciseCodeEl.textContent = solutionCode + "\n";
     solutionDetails.open = true;
     statusSpan.textContent = "Loaded suggested solution";
+    exerciseCodeEl.scrollIntoView({ behavior: "smooth", block: "center" });
     exerciseCodeEl.focus();
   }
-
-  solutionBtn.addEventListener("click", overwriteWithSolution);
 
   // Reset handler
   resetBtn.addEventListener("click", () => {

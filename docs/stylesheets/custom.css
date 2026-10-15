@@ -124,22 +124,6 @@
   margin-bottom: 0.35rem;
 }
 
-.pyodide-solution-btn {
-  background-color: var(--md-default-bg-color);
-  border-color: #f59e0b;
-  color: #d97706;
-}
-
-[data-md-color-scheme="slate"] .pyodide-solution-btn {
-  color: #fbbf24;
-  border-color: #d97706;
-}
-
-.pyodide-solution-btn:hover {
-  background-color: #f59e0b;
-  color: #ffffff;
-  border-color: #f59e0b;
-}
 
 .pyodide-reset-btn:hover {
   background-color: var(--md-default-fg-color--lightest);
@@ -197,7 +181,23 @@
 
 .pyodide-load-btn {
   font-size: 0.7rem;
-  padding: 0.15rem 0.5rem;
+  padding: 0.2rem 0.6rem;
+  background-color: var(--md-default-bg-color);
+  border-color: #f59e0b;
+  color: #d97706;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+[data-md-color-scheme="slate"] .pyodide-load-btn {
+  color: #fbbf24;
+  border-color: #d97706;
+}
+
+.pyodide-load-btn:hover {
+  background-color: #f59e0b;
+  color: #ffffff;
+  border-color: #f59e0b;
 }
 
 

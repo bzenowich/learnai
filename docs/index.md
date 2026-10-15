@@ -32,23 +32,14 @@ world — so we learn it on toy examples you can run yourself.
 
 ### AI Architecture Map
 
-```mermaid
-flowchart LR
-  subgraph FND ["Foundations"]
-    M0["0 · NumPy Basics"] --> M1["1 · Vectors & Matrices"]
-  end
-  subgraph CORE ["Language & Model"]
-    M2["2 · Tokens & Embeddings"] --> M3["3 · Attention & Training"]
-  end
-  subgraph CTX ["Context & Tools"]
-    M4["4 · Prompts & Context"] --> M5["5 · RAG & MCP Tools"]
-  end
-  subgraph AGT ["Agents & Capstone"]
-    M6["6 · Loops & Agent Architectures"] --> M7["7 · Autonomous Capstone"]
-  end
+<div class="ai-architecture-map-container" markdown>
 
-  FND --> CORE --> CTX --> AGT
-```
+<object type="image/svg+xml" data="assets/images/ai-architecture-map.svg" class="ai-architecture-map-object" aria-label="AI Architecture Quest: A Candyland-style illustrated journey from NumPy math foundations to the Autonomous Multi-Agent Citadel">
+  [![AI Architecture Map](assets/images/ai-architecture-candyland-map.webp)](assets/images/ai-architecture-candyland-map.jpg)
+</object>
+
+</div>
+
 
 ### Course Modules
 

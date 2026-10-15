@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 85" width="140" height="85" role="img" aria-label="RAG Vault & MCP Forge Zone Emblem">
+  <defs>
+    <filter id="glow-5" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000000" flood-opacity="0.8"/>
+    </filter>
+    <marker id="arrow-5" markerWidth="6" markerHeight="6" refX="4" refY="3" orient="auto">
+      <path d="M 0,0 L 6,3 L 0,6 Z" fill="#38bdf8"/>
+    </marker>
+  </defs>
+
+  <!-- Background Plaque -->
+  <rect x="4" y="4" width="132" height="77" rx="10" fill="rgba(15, 23, 42, 0.95)" stroke="#0ea5e9" stroke-width="1.8" filter="url(#glow-5)"/>
+  <!-- Top Accent Indicator -->
+  <rect x="14" y="4" width="112" height="3" rx="1.5" fill="#38bdf8"/>
+
+  <!-- Thematic Zone Artwork -->
+  
+            <!-- Vector Database Silo & Tool Drone -->
+            <!-- Cylinder Database -->
+            <ellipse cx="45" cy="35" rx="18" ry="7" fill="rgba(14, 165, 233, 0.4)" stroke="#0ea5e9" stroke-width="1.8"/>
+            <rect x="27" y="35" width="36" height="24" fill="rgba(14, 165, 233, 0.25)" stroke="none"/>
+            <line x1="27" y1="35" x2="27" y2="59" stroke="#0ea5e9" stroke-width="1.8"/>
+            <line x1="63" y1="35" x2="63" y2="59" stroke="#0ea5e9" stroke-width="1.8"/>
+            <ellipse cx="45" cy="59" rx="18" ry="7" fill="rgba(14, 165, 233, 0.4)" stroke="#0ea5e9" stroke-width="1.8"/>
+            <ellipse cx="45" cy="47" rx="18" ry="7" fill="none" stroke="#38bdf8" stroke-width="1.2" stroke-dasharray="2 2"/>
+            <!-- Tool Drone -->
+            <ellipse cx="95" cy="30" rx="10" ry="4" fill="#38bdf8"/>
+            <circle cx="85" cy="27" r="3" fill="#0ea5e9"/>
+            <circle cx="105" cy="27" r="3" fill="#0ea5e9"/>
+            <line x1="95" y1="34" x2="95" y2="44" stroke="#38bdf8" stroke-width="1.5"/>
+            <!-- Retrieval Beam -->
+            <polygon points="90,44 100,44 112,65 78,65" fill="rgba(56, 189, 248, 0.15)"/>
+        
+</svg>

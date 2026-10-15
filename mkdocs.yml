@@ -72,6 +72,8 @@ extra_javascript:
   - https://cdn.jsdelivr.net/pyodide/v0.26.4/full/pyodide.js
   - javascripts/pyodide-runner.js
   - javascripts/progress.js
+  - javascripts/candyland-decorations.js
+
 
 nav:
   - Home: index.md
@@ -112,3 +114,5 @@ nav:
       - "7.2 Build an Agentic Chatbot": module-07-capstone/7.2-agentic-chatbot.md
   - "For Educators": educators.md
   - Glossary: glossary.md
+  - "Art Style Guide": artstyle.md
+

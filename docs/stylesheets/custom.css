@@ -322,3 +322,149 @@ abbr[title] {
   display: block;
   border: none;
 }
+
+/* --- Cyber-Candyland Waypoint Banner & Card Decorations --- */
+.candyland-waypoint-banner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0 1.5rem 0;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  background: var(--md-default-bg-color);
+  border: 1.5px solid var(--zone-color, #06b6d4);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+[data-md-color-scheme="slate"] .candyland-waypoint-banner {
+  background: rgba(15, 23, 42, 0.85);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+}
+
+.candyland-waypoint-banner:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.waypoint-emblem-wrap {
+  flex-shrink: 0;
+  width: 72px;
+  height: 44px;
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.waypoint-emblem {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.waypoint-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.waypoint-top-line {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.waypoint-tile-pill {
+  font-family: var(--md-code-font-family);
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 0.15rem 0.5rem;
+  border-radius: 5px;
+  background-color: var(--zone-color, #06b6d4);
+  color: #0f172a !important;
+  letter-spacing: 0.04em;
+}
+
+.waypoint-zone-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--md-default-fg-color);
+  letter-spacing: 0.02em;
+}
+
+.waypoint-map-btn {
+  margin-left: auto;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  background: var(--md-default-fg-color--lightest);
+  color: var(--md-default-fg-color) !important;
+  border: 1px solid var(--md-default-fg-color--lighter);
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+}
+
+.waypoint-map-btn:hover {
+  background: var(--zone-color, #06b6d4);
+  color: #0f172a !important;
+  border-color: var(--zone-color, #06b6d4);
+}
+
+.waypoint-sub-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.72rem;
+  color: var(--md-default-fg-color--light);
+}
+
+.waypoint-pips-track {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.waypoint-pips-track .pip {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--md-default-fg-color--lighter);
+  transition: all 0.2s ease;
+}
+
+.waypoint-pips-track .pip.completed {
+  background-color: var(--pip-color);
+  opacity: 0.65;
+}
+
+.waypoint-pips-track .pip.current {
+  background-color: var(--pip-color);
+  transform: scale(1.4);
+  box-shadow: 0 0 6px var(--pip-color);
+}
+
+/* Decorated Module Cards on Homepage */
+.candyland-decorated-card {
+  border-top: 3px solid var(--card-zone-color, var(--md-primary-fg-color)) !important;
+}
+
+.candyland-card-badge {
+  margin-bottom: 0.5rem;
+}
+
+.card-zone-tag {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+}
+
